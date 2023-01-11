@@ -44,4 +44,4 @@ jobs:
     # Log Out From Azure 
     - name: Logout
       run: az logout
-#ACTIONS_ALLOW_UNSECURE_COMMANDS added but use $GITHUB_ENV
+#ACTIONS_ALLOW_UNSECURE_COMMANDS added but use $GITHUB_ENV Env variable
