@@ -12,7 +12,7 @@ jobs:
    runs-on: ubuntu-latest
    env:
      ENV_RESOURCEGROUP: logicappcicd
-     ENV_RESOURCEGROUPLOCATION: East US
+     ENV_RESOURCEGROUPLOCATION: EastUS
 
    steps:
 
