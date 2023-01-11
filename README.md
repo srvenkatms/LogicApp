@@ -13,4 +13,7 @@ az ad sp create-for-rbac --name "arm-template-deployment" --role contributor --s
   "managementEndpointUrl": "https://management.core.windows.net/"
 }
 
-Add above secret to GH Repo
+Add above output to GH Repo as Repositiory secrets
+
+![image](https://user-images.githubusercontent.com/66653353/211693255-d1b43db0-9562-4924-9c64-d5e69cc69951.png)
+
