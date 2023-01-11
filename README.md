@@ -15,5 +15,6 @@ az ad sp create-for-rbac --name "arm-template-deployment" --role contributor --s
 
 Add above output to GH Repo as Repositiory secrets
 
-![image](https://user-images.githubusercontent.com/66653353/211693255-d1b43db0-9562-4924-9c64-d5e69cc69951.png)
+![image](https://user-images.githubusercontent.com/66653353/211693725-406cbf0a-a937-4075-affb-a881cd00be17.png)
+
 
