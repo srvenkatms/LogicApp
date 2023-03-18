@@ -1,4 +1,25 @@
 # LogicApp
+Consumption plan Logic App wont generate Template and parameters json when ExportTemplate option is used. Parameters that are added using Parameters Tab wont get reflected, in the generated file. Foloow the below steps to generate proper template and parameters json files. 
+
+Step 1:
+To generate we need custom powershell module
+Get the source code from following repo
+https://github.com/jeffhollan/LogicAppTemplateCreator
+Download and Build the code locally 
+Generate powershell module using import module 
+Import-Module full path to debug foder
+
+Step 2 : Creation of Template.json and parameters.json
+
+
+1) Import-Module Az.Accounts
+2) Import-Module LogicAppTemplate
+3) Connect-AzAccount -TenantId tenantid
+4) $token = Get-AzAccessToken -ResourceUrl "https://management.azure.com" | Select-Object -ExpandProperty Token
+5) Get-LogicAppTemplate -LogicApp laname -ResourceGroup resourcegroup -SubscriptionId subid -Token $token -Verbose | Out-File c:\template.json
+6) Get-ParameterTemplate -TemplateFile c:\template.json | Out-File c:\'paramfile.json'
+
+Step 3
 az ad sp create-for-rbac --name "arm-template-deployment" --role contributor --scopes /subscriptions/{subscription-id} --sdk-auth
 {
   "clientId": "*************31a48dd102e8",
