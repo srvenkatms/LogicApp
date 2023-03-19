@@ -14,7 +14,7 @@ Step 2 : Creation of Template.json and parameters.json
 
 1) Import-Module Az.Accounts
 2) Import-Module LogicAppTemplate
-3) Connect-AzAccount -TenantId tenantid
+3) Connect-AzAccount -TenantId tenantid  (instaed of Login Az)
 4) $token = Get-AzAccessToken -ResourceUrl "https://management.azure.com" | Select-Object -ExpandProperty Token
 5) Get-LogicAppTemplate -LogicApp laname -ResourceGroup resourcegroup -SubscriptionId subid -Token $token -Verbose | Out-File c:\template.json
 6) Get-ParameterTemplate -TemplateFile c:\template.json | Out-File c:\'paramfile.json'
@@ -85,3 +85,12 @@ jobs:
     # Log Out From Azure 
     - name: Logout
       run: az logout
+
+
+References
+
+https://github.com/jeffhollan/LogicAppTemplateCreator
+https://www.middleway.eu/parameter-settings-in-logic-apps/#:~:text=Logic%20App%20Export%20Template%20Unfortunately%2C%20the%20Logic%20Apps,Logic%20App%20parameter%20via%20an%20ARM%20parameter%20file.
+
+Use this link to know the reason to remove AzureRM when Az modules are used
+https://stackoverflow.com/questions/64172102/connect-azaccount-the-term-connect-azaccount-is-not-recognized-as-the-name-o
